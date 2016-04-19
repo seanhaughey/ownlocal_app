@@ -1,7 +1,7 @@
 class HomeController < ActionController::Base
 	def id_search
 		id = params[:id]
-		if id == id.to_i.to_s
+		if id == id.to_i.to_s && id.to_i > 0
 	        @business = Business.find_by_id(params[:id])
 	        if @business
 	    		render json: @business
@@ -30,7 +30,7 @@ class HomeController < ActionController::Base
     def page_search
     	page = params[:page]
     	
-    	if page == page.to_i.to_s
+    	if page == page.to_i.to_s && page.to_i > 0
 	    	@businesses = Business.paginate(:page => params[:page], per_page: 50)
 	    	if @businesses.out_of_bounds?
 	    		render :file => "#{Rails.root}/public/404.html", :status => 404
