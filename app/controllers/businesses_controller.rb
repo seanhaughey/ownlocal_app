@@ -4,12 +4,14 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.all
+    @businesses = render json: Business.paginate(:page => params[:page], per_page: 50)
   end
 
   # GET /businesses/1
   # GET /businesses/1.json
   def show
+    business = Business.find(params[:id])
+    render json: business
   end
 
   # GET /businesses/new
