@@ -1,6 +1,6 @@
 == README
 
-This is the coding challenge for my application to OwnLocal. I created an api using Ruby on Rails that returns data imported from a csv provided by OwnLocal in JSON format. I used Scaffold to set up my Business model and the will_paginate gem to create pagination. I have provided a simple UI for search functionality.
+This is the coding challenge for my application to OwnLocal. I created an api using Ruby on Rails that returns data imported from a csv provided by OwnLocal in JSON format. I used Scaffold to set up my Business model and the will_paginate gem to create pagination. I also used rspec for testing. I have provided a simple UI for search functionality.
 
 Instructions:
 
