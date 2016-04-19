@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :businesses
-  resources :home
   root 'home#index'
 
   get '/id' => 'home#id_search'

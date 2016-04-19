@@ -1,14 +1,16 @@
+<%= form_tag('/page', :method => "get", id: "page-search-form") do %>
+    <div>
+        <input type="text" name="page" placeholder="Search all by page #" />
+    </div>
+    <%= submit_tag("Search") %>
+<% end %>
+<hr>
 <%= form_tag('/id', :method => "get", id: "search-form") do %>
     <div>
         <input type="text" name="id" placeholder="Search by business id" />
     </div>
     <%= submit_tag("Search") %>
 <% end %>
-<hr>
-<%= form_tag('/page', :method => "get", id: "page-search-form") do %>
-    <div>
-        <input type="text" name="page" placeholder="Search by page number" />
-    </div>
-    <%= submit_tag("Search") %>
-<% end %>
+
+
 

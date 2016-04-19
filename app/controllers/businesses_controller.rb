@@ -11,7 +11,11 @@ class BusinessesController < ApplicationController
   # GET /businesses/1.json
   def show
     business = Business.find(params[:id])
-    render json: business
+    if business
+      render json: business
+    else
+      render :json => { :errors => business.errors.full_messages }
+    end
   end
 
   # GET /businesses/new
