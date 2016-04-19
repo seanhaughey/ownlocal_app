@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  before_action :set_business, only: [:show, :edit, :update, :destroy]
+  # before_action :set_business, only: [:show]
 
   # GET /businesses
   # GET /businesses.json
@@ -10,12 +10,17 @@ class BusinessesController < ApplicationController
   # GET /businesses/1
   # GET /businesses/1.json
   def show
-    business = Business.find(params[:id])
-    if business
-      render json: business
-    else
-      render :json => { :errors => business.errors.full_messages }
-    end
+    id = params[:id]
+    if id == id.to_i.to_s && id.to_i > 0
+          @business = Business.find_by_id(params[:id])
+          if @business
+          render json: @business
+        else
+          render :file => "#{Rails.root}/public/404.html", :status => 404
+        end
+      else
+        render :file => "#{Rails.root}/public/404.html", :status => 404
+      end
   end
 
   # GET /businesses/new

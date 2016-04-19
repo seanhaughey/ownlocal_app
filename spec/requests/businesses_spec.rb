@@ -1,10 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "Businesses", type: :request do
+
+describe "Businesses API" do
   describe "GET /businesses" do
-    it "works! (now write some real specs)" do
-      get businesses_path
-      expect(response).to have_http_status(200)
+    it "returns all the movies" do
+      get "/businesses", {}, { "Accept" => "application/json" }
+
+      expect(response.status).to eq 200
+
+      body = JSON.parse(response.body)
+      business_ids = body.map { |m| m["id"] }
+
     end
   end
 end
+
