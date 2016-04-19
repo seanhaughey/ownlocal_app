@@ -1,11 +1,16 @@
 class HomeController < ActionController::Base
 	def id_search
-        @business = Business.find_by_id(params[:id])
-        if @business
-    		render json: @business
-    	else
+		id = params[:id]
+		if id == id.to_i.to_s
+	        @business = Business.find_by_id(params[:id])
+	        if @business
+	    		render json: @business
+	    	else
+	    		render :file => "#{Rails.root}/public/404.html", :status => 404
+	    	end
+	    else
     		render :file => "#{Rails.root}/public/404.html", :status => 404
-    	end
+	    end
     end
 
     # def page_search
