@@ -1,27 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the coding challenge for my application to OwnLocal. I created an api using Ruby on Rails that returns data imported from a csv provided by OwnLocal in JSON format. I used Scaffold to set up my Business model and the will_paginate gem to create pagination. I have provided a simple UI for search functionality.
 
-Things you may want to cover:
+Instructions:
 
-* Ruby version
+cd into root folder
+run bin/bundle install in command line to install all gems
+run bin/rake db:migrate to create database
+run bin/bundle exec rake import to import csv data
+run bin/rails s to start the rails server
+navigate to http://localhost:3000 to launch application
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There you will see a simple interface that allows you to search by page number or by id and return data in JSON format.
 
 
 Please feel free to use a different markup language if you do not plan to run
