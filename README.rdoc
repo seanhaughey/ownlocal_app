@@ -4,15 +4,17 @@ This is the coding challenge for my application to OwnLocal. I created an api us
 
 Instructions:
 
-cd into root folder
-run bin/bundle install in command line to install all gems
-run bin/rake db:migrate to create database
-run bin/bundle exec rake import to import csv data
-run bin/rails s to start the rails server
-navigate to http://localhost:3000 to launch application
+From the command line:
+1. cd into root folder,
+2. bundle install to install all gems, 
+3. rake db:migrate to create database, 
+4. bundle exec rake import to import csv data, 
+5. rails s to start the rails server.
+
+Then in the browser:
+navigate to http://localhost:3000 to launch application.
 
 There you will see a simple interface that allows you to search by page number or by id and return data in JSON format.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
